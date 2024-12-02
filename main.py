@@ -51,8 +51,9 @@ def main():
     if not os.path.exists(template_file):
         print(f"No template found for '{lang}'.")
     else:
-        copyfile(template_file, os.path.join(day_folder, f"solution.{template_file.split('.')[-1]}"))
-        print(f"Template for {lang} copied to {day_folder}/solution.{template_file.split('.')[-1]}.")
+        ext = template_file.split('.')[-1]
+        copyfile(template_file, os.path.join(day_folder, f"solution.{ext}"))
+        print(f"Template for {lang} copied to {day_folder}/solution.{ext}.")
     
     # Copy the submit.py file
     submit_file = "submit.py"

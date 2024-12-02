@@ -1,11 +1,10 @@
-# Read input from input.txt
 with open("input.txt", "r") as file:
-    data = file.read().strip()
+    data = file.read().splitlines()
 
 def solve(input_data):
     left = []
     right = []
-    for line in input_data.split("\n"):
+    for line in input_data:
         l, r = line.split("   ")
         left.append(l)
         right.append(r)
@@ -23,7 +22,7 @@ def solve2(input_data):
     left = []
     seen_right = {}
 
-    for line in input_data.split("\n"):
+    for line in input_data:
         l, r = line.split("   ")
         left.append(l)
 
