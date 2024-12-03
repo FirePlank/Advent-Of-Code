@@ -8,5 +8,5 @@ def solve2(input_data):
     return "Solution Placeholder"
 
 if __name__ == "__main__":
-    print(solve(data))
-    # print(solve2(data))
+    print("Part 1:", solve(data))
+    print("Part 2:", solve2(data))

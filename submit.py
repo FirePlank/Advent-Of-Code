@@ -42,7 +42,9 @@ def run_solution():
                     result = subprocess.run([executable], capture_output=True, text=True)
                 else:
                     continue
-                return result.stdout.strip()
+
+                result_str = result.stdout.strip().replace("Part 1: ", "").replace("Part 2: ", "")
+                return result_str
             
             except subprocess.CalledProcessError as e:
                 raise RuntimeError(f"Error running solution file: {e}")
