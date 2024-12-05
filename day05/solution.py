@@ -78,7 +78,6 @@ def reorder_update(update, rules):
 
     return sorted_update
 
-
 def solve2(input_data):
     _, incorrect_updates, rules = process_updates(input_data)
 
@@ -89,11 +88,9 @@ def solve2(input_data):
 
     result = 0
     for reordered in reordered_updates:
-        middle_page = int(reordered[len(reordered) // 2])
-        result += middle_page
+        result += int(reordered[len(reordered) // 2])
 
     return result
-
 
 if __name__ == "__main__":
     print("Part 1:", solve(data))
