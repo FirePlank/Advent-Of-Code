@@ -32,9 +32,9 @@ def solve(grid):
             break
 
         if grid[next_pos[0]][next_pos[1]] == '#':
-            guard_pos = turns[facing]  # Turn right
+            facing = turns[facing]  # Turn right
         else:
-            facing = next_pos  # Move forward
+            guard_pos = next_pos  # Move forward
 
     return len(visited)
 
