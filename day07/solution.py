@@ -10,15 +10,17 @@ def solve(input_data, allow_concat=False):
         numbers = list(map(int, numbers.split()))
         
         def backtrack(idx, current):
+            if current > target:
+                return False
             if idx == len(numbers):
                 return current == target
             
-            ops = [current + numbers[idx], current * numbers[idx]]
+            ops = [current * numbers[idx], current + numbers[idx]]
             if allow_concat:
                 ops.append(int(str(current) + str(numbers[idx])))
-                
+
             return any(backtrack(idx + 1, op) for op in ops)
-        
+
         if backtrack(1, numbers[0]):
             total += target
     
